@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Do not modify the meta properties below -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="music-biz" content="Muisc Application" />
+
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/chocolat.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/classie.js"></script>
+    <script src="~/js/jquery-1.11.1.min.js"></script>
+    <script src="~/js/jquery.chocolat.js"></script>
+    <script src="~/js/uisearch.js"></script>
+
+    <title>@ViewBag.Title - Music Biz</title>
+
+
+
+    @{
+        var userAccount = new W2022A5MA.Controllers.RequestUser(User as System.Security.Claims.ClaimsPrincipal);
+    }
+</head>
+<body>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="header_bottom">
+            <div class="container">
+                <div class="logo">
+                    <h2>@Html.ActionLink("Music Biz", "Index", "Home")</h2>
+                </div>
+                <nav class="navbar navbar-default menu" role="navigation">
+                    <h3 class="nav_right"><a href="index.html">Melody</a></h3>
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav menu1">
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Genres", "Index", "Genres")</li>
+                                <li>@Html.ActionLink("Artists", "Index", "Artists")</li>
+                                <li>@Html.ActionLink("Albums", "Index", "Albums")</li>
+                                <li>@Html.ActionLink("Tracks", "Index", "Tracks")</li>
+                                <li> @Html.Partial("_LoginPartial")</li>
+                            </ul>
+                           
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    <hr />
+    <div class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <h3>Git Hub</h3>
+                <ul class="list1">
+                    <li><a href="#"></a></li>
+                    <li><a href="https://github.com/mahsan15/MusicBiz.git" target="_blank">Source Code</a></li>
+                </ul>
+            </div>
+            <div class="footer-grid">
+                <h3>Layout</h3>
+                <ul class="list1">
+                    <li><a href="https://w3layouts.com/" target="_blank">W3Layouts</a></li>
+                </ul>
+            </div>
+            <div class="footer-grid">
+                <h3>Project</h3>
+                <ul class="list1">
+                    <li><a href="#">Web524 Initial project</a></li>
+                </ul>
+            </div>
+            <div class="footer-grid">
+                <h3>Follow Us</h3>
+                <ul class="social">
+                    <li><a href="https://www.linkedin.com/in/muhammad-ahsan-643ab4245" target="_blank"><i class="fa fa-linkedin"> </i></a></li>
+                </ul>
+            </div>
+            <div class="footer-grid last_grid">
+                <h4>Subscribe to our Newsletter</h4>
+                <form>
+                    <input type="text" value="Your Email Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email Address';}">
+                    <input type="submit" value="Go">
+                </form>
+                <h5>Call Team</h5>
+                <h6>1.647.836.3077</h6>
+            </div>
+        </div>
+    </div>
+    <div class="footer_bottom">
+        <div class="container">
+            <p class="copy">Copyright &copy; 2022 Music Biz. All Rights Reserved. Design by <a href="https://www.linkedin.com/in/muhammad-ahsan-643ab4245" target="_blank">Muhammad Ahsan</a> </p>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

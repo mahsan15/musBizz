@@ -1,0 +1,77 @@
+﻿@model W2022A5MA.Models.TrackWithDetailViewModel
+
+@{
+    ViewBag.Title = "Track Details";
+}
+
+<h2>Details for track @Model.Name</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Composers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Composers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clerk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clerk)
+        </dd>
+
+        <dt>
+            Number of albums with this track
+        </dt>
+
+        <dd>
+            @Model.AlbumNames.Count()
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlbumNames);
+        </dt>
+
+        <dd>
+            @if (Model.AlbumNames.Count() > 0)
+            {
+                foreach (var inv in Model.AlbumNames)
+                {
+                    <span>
+                        @inv
+                    </span>
+                    <br />
+                }
+            }
+            else
+            {
+                <span> - </span>
+            }
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
